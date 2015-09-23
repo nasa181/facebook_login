@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -106,11 +108,13 @@ class loginManager extends Controller
         return view('register-page');
     }
 
-    public function postForm(Request $request){
+    public function postForm(CreateUserRequest $request){
+        User::create(Request::all());
         $user = $request->newUser;
         $pass = $request->newPass;
         $confirm_pass = $request->conPass;
         $mail = $request->new_mail;
+        if(Auth::attempt(array('username' => $user))) return redirect('createNewUser');
         if($pass != $confirm_pass) return redirect('createNewUser');
         $new_username = new User();
         $new_username->username = $user;
@@ -122,7 +126,7 @@ class loginManager extends Controller
     public function checkID(Request $request){
         $user = $request->name_userName;
         $password = $request->name_password;
-        if (Auth::attempt(array('name' => $user, 'password' => $password),null))
+        if (Auth::attempt(array('username' => $user, 'password' => $password),null))
         {
             return redirect('testLogin');
         }

@@ -13,10 +13,10 @@
 Route::get('/', 'loginManager@firstPage');
 Route::post('/','loginManager@checkID');
 //
-//Route::get('logout', 'loginManager@getLogout');
-//Route::get('testLogin','loginManager@getLogin');
-//Route::get('createNewUser','loginManager@getNewUser');
-//Route::post('createNewUser','loginManager@postForm');
+Route::get('logout', 'loginManager@getLogout');
+Route::get('testLogin','loginManager@getLogin');
+Route::get('createNewUser','loginManager@getNewUser');
+Route::post('createNewUser','loginManager@postForm');
 
 
 

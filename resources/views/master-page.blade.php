@@ -16,7 +16,9 @@
             font-weight: 100;
             font-family: 'Lato';
         }
-
+        .moreoption{
+            color:red;
+        }
         .container {
             text-align: center;
             display: table-cell;
@@ -44,10 +46,10 @@
 
         }
         .turnAround:hover{
-            animation: anim 2s linear;
-            -webkit-animation: anim 2s linear;
-            -moz-animation: anim 2s linear;
-            -o-animation: anim 2s linear;
+            animation: anim 0.25s linear;
+            -webkit-animation: anim 0.25s linear;
+            -moz-animation: anim 0.25s linear;
+            -o-animation: anim 0.25s linear;
             background: #ffffff;
         }
         .circle {
@@ -130,6 +132,19 @@
             position:fixed;
             top:40%;
             left:43%;
+        }
+        .bithigher{
+            position:fixed;
+            top:38%;
+            left:42%;
+        }
+        .bitleft{
+            position:fixed;
+            left:40%;
+        }
+        .underpass{
+            position:fixed;
+            top:53%;
         }
     </style>
 </head>
