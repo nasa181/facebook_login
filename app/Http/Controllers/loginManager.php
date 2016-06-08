@@ -108,8 +108,8 @@ class loginManager extends Controller
         return view('register-page');
     }
 
-    public function postForm(CreateUserRequest $request){
-        User::create(Request::all());
+    public function postForm(Request $request){
+    //    User::create(Request::all());
         $user = $request->newUser;
         $pass = $request->newPass;
         $confirm_pass = $request->conPass;

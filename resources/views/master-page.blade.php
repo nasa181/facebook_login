@@ -9,12 +9,16 @@
         }
 
         body {
+            background-image: url("accommodation_background.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
             width: 100%;
             display: table;
             font-weight: 100;
             font-family: 'Lato';
+
         }
         .moreoption{
             color:red;
